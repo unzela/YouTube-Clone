@@ -1,12 +1,19 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { toggleMenu } from '../utils/appSlice';
 
 const Head = () => {
+  const dispatch = useDispatch();
+  const toggleMenuHandler = () => {
+    dispatch(toggleMenu());
+  }
+
   return (
     <div className="grid grid-flow-col p-2 m-2 shadow-lg">
 
       <div className="flex col-span-1">
-        <img className="h-12" alt="Menu" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4fCH_Pu_uWRgqR4bXUknjpz07igKC0GvSVQ&usqp=CAU" />
-        <img className="h-12 mx-2" aly="youtube-logo" src="https://t3.ftcdn.net/jpg/03/00/38/90/240_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg"/>
+        <img onClick={()=>toggleMenuHandler()} className="h-12 cursor-pointer" alt="Menu" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4fCH_Pu_uWRgqR4bXUknjpz07igKC0GvSVQ&usqp=CAU" />
+        <img className="h-12 mx-2 cursor-pointer" aly="youtube-logo" src="https://t3.ftcdn.net/jpg/03/00/38/90/240_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg"/>
       </div>
 
       <div className="col-span-10 px-10">
@@ -21,4 +28,4 @@ const Head = () => {
   )
 }
 
-export default Head
+export default Head;
