@@ -29,4 +29,4 @@ const getVideos = async() => {
   )
 }
 
-export default VideoContainer
+export default VideoContainer;
